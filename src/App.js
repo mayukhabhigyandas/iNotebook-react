@@ -1,4 +1,5 @@
 import "./App.css";
+import React from 'react';
 import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -10,7 +11,7 @@ import Signup from "./components/Signup";
 import { useState } from "react";
 
 function App() {
-  const [alert, setAlert ] =useState(null);
+  const [alert, setAlert ] = useState(null);
   const showAlert= (message, type)=>{
     setAlert({
       msg:message,

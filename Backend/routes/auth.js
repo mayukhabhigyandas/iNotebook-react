@@ -4,7 +4,7 @@ const User=require('../models/User');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-var fetchuser=require('../middleware/fetchuser');
+var fetchuser = require('../middleware/fetchuser');
 const JWT_SECRET="Mayukhisagoodboy";
 
 //Route 1: Create a User using: Post "/api/auth/createuser". No login required
@@ -24,7 +24,7 @@ router.post('/createuser', [
     //Check whether the user with this email exists already
     let user=await User.findOne({email:req.body.email});
     if(user){
-        return res.status(400).json({success, error:"Sorry a use with this email already exist"})
+        return res.status(400).json({success, error:"Sorry a user with this email already exist"})
     }
     const salt = await bcrypt.genSalt(10);
     const secPass = await bcrypt.hash(req.body.password, salt);
@@ -58,7 +58,7 @@ router.post('/login', [
     body('password', 'Password can not be blank').exists(),
 ], async (req, res)=>{
     let success = false;
-    const errors=validationResult(req);
+    const errors = validationResult(req);
     if(!errors.isEmpty()){
         return res.status(400).json({ errors: errors.array()});
     }
@@ -93,7 +93,7 @@ try{
     }
 })
 
-//Route 3: Get loggedin User Details using: Post "/api/auth/getuser". No login required
+//Route 3: Get logged in User Details using: Post "/api/auth/getuser". No login required
 router.post('/getuser',fetchuser, async (req, res)=>{
 try{
     
