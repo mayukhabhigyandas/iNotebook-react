@@ -18,7 +18,7 @@ const Notes = (props) => {
       navigate("/login");
       console.log('success')
     }
-  }, []);
+  }, [getNotes, navigate]);
 
   const ref = useRef(null);
   const refClose = useRef(null);
