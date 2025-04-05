@@ -39,6 +39,7 @@ const NoteState = (props) => {
     //Delete a note
     const deleteNote = async (id) => {
       //API call
+      // eslint-disable-next-line
       const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
         method: "DELETE",
         headers: {
@@ -46,8 +47,8 @@ const NoteState = (props) => {
           "auth-token": localStorage.getItem('token')
         },
       });
-     const json = await response.json();
-     console.log(json);
+     //const json = await response.json();
+     //console.log(json);
       const newNotes = notes.filter((note) => {
         return note._id !== id;
       });
@@ -58,6 +59,7 @@ const NoteState = (props) => {
     const editNote = async (id, title, description, tag) => {
       
         //API call
+        // eslint-disable-next-line
         const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
           method: "PUT",
           headers: {
@@ -66,8 +68,8 @@ const NoteState = (props) => {
           },
           body: JSON.stringify({title, description, tag}),
         });
-       const json = await response.json();
-       console.log(json);
+       //const json = await response.json();
+       //console.log(json);
        let newNotes= JSON.parse(JSON.stringify(notes))
        for (let index = 0; index < newNotes.length; index++) {
         //Logic to edit in client

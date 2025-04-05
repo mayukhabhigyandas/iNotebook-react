@@ -13,10 +13,10 @@ const Notes = (props) => {
    useEffect(() => {
     if(localStorage.getItem('token')){
       getNotes();
-      console.log('not success')
+      //console.log('not success')
     }else{
       navigate("/login");
-      console.log('success')
+      //console.log('success')
     }
   }, [getNotes, navigate]);
 

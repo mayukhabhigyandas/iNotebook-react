@@ -1,45 +1,32 @@
 {
   "name": "inotebook",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "16": "^0.0.2",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "concurrently": "^8.2.2",
-    "dotenv": "^16.4.7",
-    "mongodb": "^6.15.0",
-    "mongoose": "^8.13.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^6.23.1",
-    "react-scripts": "^3.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "both": "concurrently \"npm run start\" \"nodemon backend/index.js\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm start --prefix client",
+    "server": "nodemon backend/index.js",
+    "both": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayukhabhigyandas/iNotebook-react.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mayukhabhigyandas/iNotebook-react/issues"
+  },
+  "homepage": "https://github.com/mayukhabhigyandas/iNotebook-react#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }
