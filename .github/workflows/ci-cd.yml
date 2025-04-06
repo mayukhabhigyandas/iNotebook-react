@@ -47,10 +47,12 @@ jobs:
       - name: Run frontend tests
         working-directory: ./Client
         run: npm test
+    
+      - name: Add SKIP_PREFLIGHT_CHECK
+        working-directory: ./Client
+        run: echo "SKIP_PREFLIGHT_CHECK=true" > .env
 
       # Optional: Build frontend
       - name: Build frontend
         working-directory: ./Client
         run: npm run build
-        env:
-            SKIP_PREFLIGHT_CHECK: true
