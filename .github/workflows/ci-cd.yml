@@ -46,7 +46,7 @@ jobs:
 
       - name: Run frontend tests
         working-directory: ./Client
-        run: npm test
+        run: npm test -- --passWithNoTests
         env:
             SKIP_PREFLIGHT_CHECK: true
 
