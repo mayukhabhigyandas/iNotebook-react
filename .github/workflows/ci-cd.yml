@@ -52,3 +52,5 @@ jobs:
       - name: Build frontend
         working-directory: ./Client
         run: npm run build
+        env:
+            SKIP_PREFLIGHT_CHECK: true
