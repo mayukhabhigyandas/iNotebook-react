@@ -12,7 +12,7 @@ jobs:
 
     services:
       mongo:
-        image: mongo:4.4
+        image: mongo:8.0
         ports: 
           - 27017:27017
         options: >-
@@ -28,27 +28,27 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       # Install and test backend
       - name: Install backend dependencies
-        working-directory: ./server
+        working-directory: ./Backend
         run: npm install
 
       - name: Run backend tests
-        working-directory: ./server
+        working-directory: ./Backend
         run: npm test
 
       # Install and test frontend
       - name: Install frontend dependencies
-        working-directory: ./client
+        working-directory: ./Client
         run: npm install
 
       - name: Run frontend tests
-        working-directory: ./client
+        working-directory: ./Client
         run: npm test
 
       # Optional: Build frontend
       - name: Build frontend
-        working-directory: ./client
+        working-directory: ./Client
         run: npm run build
